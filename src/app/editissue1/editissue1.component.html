@@ -1,0 +1,60 @@
+
+<div id="page-wrapper">
+  <div id="page-inner">
+
+      <div class="row">
+  
+          <div class="col-md-12">
+          <h1 class="page-head-line">Update Issues</h1>
+          <h1 class="page-subhead-line">User can  update the comments on issuses here !  </h1>
+    
+          </div>
+      </div>
+
+
+          <div class="row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6 col-md-offset-3">
+          <div class="jumbotron">
+          <form [formGroup]="editForm" (ngSubmit)="postdata(editForm)" autocomplete="off" >
+          <div class="form-group">
+          <label for="name">Title</label>
+          <input type="text" name="title" formControlName="title" disabled="true" autocomplete="off" class="form-control input-sm" placeholder="Title">
+          </div>
+          <div class="form-group">
+              <label for="name">Description</label>
+              <input type="text" name="description" disabled="true" formControlName="description" autocomplete="off" class="form-control input-sm" placeholder="description">
+          </div>
+
+          <div class="form-group">
+                  <label for="name">Report Date</label>
+                  <input type="text" name="reportdate" disabled="true" formControlName="reportdate" autocomplete="off" class="form-control input-sm" placeholder="reportdate">
+          </div>
+          <div class="form-group">
+                      <label for="name">Report By</label>
+                      <input type="text" name="reporter" disabled="true" formControlName="reporter" autocomplete="off" class="form-control input-sm" placeholder="reporter">
+          </div>
+          <div class="form-group">
+                          <label for="name">Comments </label>
+                          <!-- <input type="text" name="comments" formControlName="comments" autocomplete="off" class="form-control input-sm" placeholder="comments"> -->
+                          <textarea cols="30" rows="4" formControlName="comments" class="form-control input-sm" [(ngModel)] = "commentstring"></textarea>
+
+                      </div>
+          <div class="form-group">
+              <label for="name">status </label>
+              <select name="current_status" id="current_status"  formControlName="current_status" class="form-control">
+                  <option *ngFor="let e of issue_status"  value="{{e.name}}" >  {{e.name}}   </option>  
+                </select>
+
+                <!-- <select name="current_status" id="current_status"  class="form-control">
+                  <option *ngFor="let e of issue_status" [selected]="e.name === current_status" value="{{e.name}}" >  {{e.name}}   </option>  
+                </select> -->
+          </div>
+          <button type="submit" class="btn btn-primary" >Update Issue</button>
+          &nbsp;&nbsp;
+          <button type="button"   class="btn btn-danger"  (click)="cancel()">Cancel</button>
+
+              </form>
+          </div>
+          </div>

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "trackapp1"
+    }
+  },
+  "defaultProject": "trackapp1",
+  "cli": {
+    "analytics": "adb834d0-5573-477b-b027-772d1cd099ef"
+  }
 }

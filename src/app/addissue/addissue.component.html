@@ -1,0 +1,55 @@
+<div id="page-wrapper">
+    <div id="page-inner">
+
+        <div class="row">
+    
+            <div class="col-md-12">
+            <h1 class="page-head-line">Add New Issues</h1>
+            <h1 class="page-subhead-line">User can  raise new issuses here !  </h1>
+      
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+            <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" name="title" formControlName="title" autocomplete="off" class="form-control input-sm" placeholder="Title">
+            </div>
+            <div class="form-group">
+            <label for="email">Description</label>
+            <!-- <textArea name="desc" [(ngModel)]='desc' class="form-control input-sm" rows="5" cols="60" ></textArea> -->
+            <input type="text" name="description" formControlName="description" autocomplete="off" class="form-control input-sm" placeholder="description">
+
+            </div>
+            <div class="form-group">
+                <label for="email">Date of Report</label>
+                <input type="text" formControlName="reportdate"  name="reportdate" class="form-control"  placeholder="Date of Report" type="date" /> 
+            </div>
+            <div class="form-group">
+                <label for="email">Status</label>
+                <input type="text" name="status" formControlName="status"  value="{{str}}"  autocomplete="on" class="form-control input-sm"  >
+            </div>
+            <div class="form-group">
+                <label for="email">Assign To</label>
+                <!-- <input type="text" name="status" formControlName="status" autocomplete="off" class="form-control input-sm" placeholder="Status" value="LOGGED"> -->
+                <select  name="assignee" formControlName="assignee" class="form-control" >   
+                    <option value="">--Select-Assignee--</option>  
+                    <option *ngFor="let e of emails" value={{e.email}}>  {{e.email}}   </option>  
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" >Save Issue</button>
+            </form>
+            </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+            </div>
+
+    </div>
+</div>

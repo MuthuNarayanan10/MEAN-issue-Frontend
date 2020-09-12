@@ -1,0 +1,45 @@
+<div id="page-wrapper">
+  <div id="page-inner">
+    <div class="row">
+    
+      <div class="col-md-12">
+      <h1 class="page-head-line">View All Issues</h1>
+      <h1 class="page-subhead-line">View all issues and its progreass here !  </h1>
+
+      </div>
+  </div>
+    <div class="row">
+        <div class="container">
+            <p *ngIf="issues.length <= 0" class="no-data text-center">There is no issues added yet!</p>
+            <table class="table table-bordered"  *ngIf="issues.length > 0">
+                <thead class="table-success">
+                  <tr >
+                    <th bgcolor="navy" style="color:white" scope="col">Issue No</th>
+                    <th bgcolor="navy" style="color:white" scope="col">Title</th>
+                    <th bgcolor="navy" style="color:white" scope="col">Status</th>
+                    <th bgcolor="navy" style="color:white" scope="col">ReportDate</th>
+                    <th bgcolor="navy" style="color:white" scope="col">ReportBy</th>
+                    <th bgcolor="navy" style="color:white" scope="col">Assigned To</th>
+                    <th bgcolor="navy" style="color:white" scope="col">actions</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let issue of issues; let i = index" [ngClass] = "{'highlight' : issue.status == 'DONE'}">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{issue.title}}</td>
+                        <td>{{issue.status}}</td>
+                        <td>{{issue.reportdate}}</td>
+                        <td>{{issue.reporter}}</td>
+                        <td>{{issue.assignee}}</td>
+                        <td class="text-center edit-block">
+                          <a [hidden]="issue.status != 'DONE'"  [routerLink]="['/viewcompletedissue',{id:issue._id}]"><i class="fa fa-eye" style="font-size:36px;color:black"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,52 @@
+<div id="page-wrapper">
+    <div id="page-inner">
+  
+        <div class="row">
+    
+            <div class="col-md-12">
+            <h1 class="page-head-line">View Completed Issue</h1>
+            <h1 class="page-subhead-line">User can  view the comments on issuses completed here !  </h1>
+      
+            </div>
+        </div>
+  
+  
+            <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+            <form [formGroup]="editForm"  autocomplete="off" >
+            <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" name="title" formControlName="title"  autocomplete="off" class="form-control input-sm" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label for="name">Description</label>
+                <input type="text" name="description"  formControlName="description" autocomplete="off" class="form-control input-sm" placeholder="description">
+            </div>
+  
+            <div class="form-group">
+                    <label for="name">Report Date</label>
+                    <input type="text" name="reportdate" formControlName="reportdate"  autocomplete="off" class="form-control input-sm" placeholder="reportdate">
+            </div>
+            <div class="form-group">
+                        <label for="name">Report By</label>
+                        <input type="text" name="reporter"  formControlName="reporter" autocomplete="off" class="form-control input-sm" placeholder="reporter">
+            </div>
+            <div class="form-group">
+                            <label for="name">Comments </label>
+                            <input type="text" name="comments" formControlName="comments"  autocomplete="off" class="form-control input-sm" placeholder="comments">
+                            <!-- <textarea cols="30" rows="4" formControlName="comments" class="form-control input-sm" [(ngModel)] = "commentstring">{{comments}}</textarea> -->
+  
+                        </div>
+            <div class="form-group">
+                <label for="name">status </label>
+                <input type="text" name="status" disabled="true" formControlName="status" autocomplete="off" class="form-control input-sm" >
+ 
+            </div>
+            <button type="button"   class="btn btn-danger"  (click)="cancel()">Goback</button>
+  
+                </form>
+            </div>
+            </div>
